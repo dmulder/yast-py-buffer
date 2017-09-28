@@ -433,64 +433,40 @@ def Graph(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def HBox(children=[], _id=None, opts=[]):
+def HBox(*children):
     """Generic layout: Arrange widgets horizontally
 
     Synopsis
     HBox ( children... );
 
-    Options
-    debugLayout  verbose logging
-
     Optional Arguments
     list children  children widgets
 
     """
-    from ycp import HBox, Term, Symbol
+    from ycp import HBox
     ycp.widget_names()
 
     try:
-        result = []
-        if _id is not None:
-            result.append(Term('id', _id))
-        if opts is not None:
-            for opt in opts:
-                result.append(Term('opt', Symbol(opt)))
-        result.extend(children)
-        result = tuple(result)
-
-        return HBox(*result)
+        return HBox(*children)
     except Exception as e:
         traceback.print_exc()
         sys.exit(1)
 
-def VBox(children=[], _id=None, opts=[]):
+def VBox(*children):
     """Generic layout: Arrange widgets vertically
 
     Synopsis
     VBox ( children... );
 
-    Options
-    debugLayout  verbose logging
-
     Optional Arguments
     list children  children widgets
 
     """
-    from ycp import VBox, Term, Symbol
+    from ycp import VBox
     ycp.widget_names()
 
     try:
-        result = []
-        if _id is not None:
-            result.append(Term('id', _id))
-        if opts is not None:
-            for opt in opts:
-                result.append(Term('opt', Symbol(opt)))
-        result.extend(children)
-        result = tuple(result)
-
-        return VBox(*result)
+        return VBox(*children)
     except Exception as e:
         traceback.print_exc()
         sys.exit(1)
