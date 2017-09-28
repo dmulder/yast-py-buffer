@@ -71,11 +71,23 @@ class WizardDialog(DialogTop):
     def DisableNextButton(self):
         Wizard.DisableNextButton()
 
+    def DisableAbortButton(self):
+        Wizard.DisableAbortButton()
+
+    def EnableAbortButton(self):
+        Wizard.EnableAbortButton()
+
+    def EnableNextButton(self):
+        Wizard.EnableNextButton()
+
+    def EnableBackButton(self):
+        Wizard.EnableBackButton()
+
 class Dialog(DialogTop):
     def __init__(self, contents):
         UI.OpenDialog(contents)
 
-    def __del__(self):
+    def CloseDialog(self):
         UI.CloseDialog()
 
 def BarGraph(values, labels, _id=None, opts=[]):
