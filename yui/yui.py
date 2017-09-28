@@ -252,13 +252,20 @@ def CheckBoxFrame(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def ComboBox(_id=None, opts=[]):
-    """
+def ComboBox(label, items=[], _id=None, opts=[]):
+    """drop-down list selection (optionally editable)
 
     Synopsis
-    ComboBox (  );
+    ComboBox ( string label, list items );
 
     Parameters
+    string label
+
+    Options
+    editable  the user can enter any value.
+
+    Optional Arguments
+    list items  the items contained in the combo box
 
     """
     from ycp import ComboBox, Term, Symbol
@@ -271,6 +278,14 @@ def ComboBox(_id=None, opts=[]):
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
+        result.append(label)
+        options = []
+        for item in items:
+            if type(item) is tuple:
+                options.append(Term('item', *item))
+            else:
+                options.append(item)
+        result.append(options)
         result = tuple(result)
 
         return ComboBox(*result)
@@ -471,13 +486,14 @@ def VBox(*children):
         traceback.print_exc()
         sys.exit(1)
 
-def HSpacing(_id=None, opts=[]):
-    """
+def HSpacing(size=None):
+    """Fixed size empty space for layout
 
     Synopsis
-    HSpacing (  );
+    HSpacing ( integer|float size );
 
-    Parameters
+    Optional Arguments
+    integer|float size
 
     """
     from ycp import HSpacing, Term, Symbol
@@ -485,14 +501,83 @@ def HSpacing(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
-        if opts is not None:
-            for opt in opts:
-                result.append(Term('opt', Symbol(opt)))
+        if size is not None:
+            result.append(size)
         result = tuple(result)
 
         return HSpacing(*result)
+    except Exception as e:
+        traceback.print_exc()
+        sys.exit(1)
+
+def VSpacing(size=None):
+    """Fixed size empty space for layout
+
+    Synopsis
+    VSpacing ( integer|float size );
+
+    Optional Arguments
+    integer|float size
+
+    """
+    from ycp import VSpacing, Term, Symbol
+    ycp.widget_names()
+
+    try:
+        result = []
+        if size is not None:
+            result.append(size)
+        result = tuple(result)
+
+        return VSpacing(*result)
+    except Exception as e:
+        traceback.print_exc()
+        sys.exit(1)
+
+def HStretch(size=None):
+    """Fixed size empty space for layout
+
+    Synopsis
+    HStretch ( integer|float size );
+
+    Optional Arguments
+    integer|float size
+
+    """
+    from ycp import HStretch, Term, Symbol
+    ycp.widget_names()
+
+    try:
+        result = []
+        if size is not None:
+            result.append(size)
+        result = tuple(result)
+
+        return HStretch(*result)
+    except Exception as e:
+        traceback.print_exc()
+        sys.exit(1)
+
+def VStretch(size=None):
+    """Fixed size empty space for layout
+
+    Synopsis
+    VStretch ( integer|float size );
+
+    Optional Arguments
+    integer|float size
+
+    """
+    from ycp import VStretch, Term, Symbol
+    ycp.widget_names()
+
+    try:
+        result = []
+        if size is not None:
+            result.append(size)
+        result = tuple(result)
+
+        return VStretch(*result)
     except Exception as e:
         traceback.print_exc()
         sys.exit(1)
@@ -626,13 +711,18 @@ def IntField(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def Label(_id=None, opts=[]):
-    """
+def Label(label, _id=None, opts=[]):
+    """Simple static text
 
     Synopsis
-    Label (  );
+    Label ( string label );
 
     Parameters
+    string label
+
+    Options
+    outputField  make the label look like an input field in read-only mode
+    boldFont  use a bold font
 
     """
     from ycp import Label, Term, Symbol
@@ -645,9 +735,42 @@ def Label(_id=None, opts=[]):
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
+        result.append(label)
         result = tuple(result)
 
         return Label(*result)
+    except Exception as e:
+        traceback.print_exc()
+        sys.exit(1)
+
+def Heading(label, _id=None, opts=[]):
+    """Simple static text
+
+    Synopsis
+    Heading ( string label );
+
+    Parameters
+    string label
+
+    Options
+    outputField  make the label look like an input field in read-only mode
+    boldFont  use a bold font
+
+    """
+    from ycp import Heading, Term, Symbol
+    ycp.widget_names()
+
+    try:
+        result = []
+        if _id is not None:
+            result.append(Term('id', _id))
+        if opts is not None:
+            for opt in opts:
+                result.append(Term('opt', Symbol(opt)))
+        result.append(label)
+        result = tuple(result)
+
+        return Heading(*result)
     except Exception as e:
         traceback.print_exc()
         sys.exit(1)
@@ -1508,12 +1631,14 @@ def TimezoneSelector(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def Node(label, expanded=False, children=[]):
+def Node(label, expanded=False, children=[], _id=None):
     from ycp import Term
     ycp.widget_names()
 
     try:
         result = []
+        if _id is not None:
+            result.append(Term('id', _id))
         result.append(label)
         result.append(expanded)
         result.append(children)
