@@ -1652,7 +1652,10 @@ def Table(header, items=[], _id=None, opts=[]):
         result.append(Term('header', *header))
         contents = []
         for item in items:
-            contents.append(Term('item', *item))
+            if type(item) is list:
+                contents.append(Term('item', Term('id', item[0]), *(item[1])))
+            else:
+                contents.append(Term('item', *item))
         result.append(contents)
         result = tuple(result)
 
