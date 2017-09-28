@@ -55,16 +55,16 @@ class DialogTop:
             yield UI.UserInput()
 
     @staticmethod
-    def QueryWidget(_id, symbol):
-        return UI.QueryWidget(Term('id', _id), Symbol(symbol))
+    def QueryWidget(ID, symbol):
+        return UI.QueryWidget(Term('id', ID), Symbol(symbol))
 
     @staticmethod
-    def ReplaceWidget(_id, contents):
-        UI.ReplaceWidget(Term('id', _id), contents)
+    def ReplaceWidget(ID, contents):
+        UI.ReplaceWidget(Term('id', ID), contents)
 
     @staticmethod
-    def SetFocus(_id):
-        UI.SetFocus(Term('id', _id))
+    def SetFocus(ID):
+        UI.SetFocus(Term('id', ID))
 
     @staticmethod
     def HasSpecialWidget(symbol):
@@ -108,7 +108,7 @@ class Dialog(DialogTop):
     def CloseDialog():
         UI.CloseDialog()
 
-def BarGraph(values, labels, _id=None, opts=[]):
+def BarGraph(values, labels, ID=None, opts=[]):
     """Horizontal bar graph (optional widget)
 
     Synopsis
@@ -125,8 +125,8 @@ def BarGraph(values, labels, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -139,7 +139,7 @@ def BarGraph(values, labels, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def BusyIndicator(label, timeout=None, _id=None, opts=[]):
+def BusyIndicator(label, timeout=None, ID=None, opts=[]):
     """Graphical busy indicator
 
     Synopsis
@@ -157,8 +157,8 @@ def BusyIndicator(label, timeout=None, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -172,7 +172,7 @@ def BusyIndicator(label, timeout=None, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def ButtonBox(buttons, _id=None, opts=[]):
+def ButtonBox(buttons, ID=None, opts=[]):
     """Layout for push buttons that takes button order into account
 
     Synopsis
@@ -187,8 +187,8 @@ def ButtonBox(buttons, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -200,7 +200,7 @@ def ButtonBox(buttons, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def CheckBox(_id=None, opts=[]):
+def CheckBox(ID=None, opts=[]):
     """
 
     Synopsis
@@ -214,8 +214,8 @@ def CheckBox(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -226,7 +226,7 @@ def CheckBox(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def CheckBoxFrame(_id=None, opts=[]):
+def CheckBoxFrame(ID=None, opts=[]):
     """
 
     Synopsis
@@ -240,8 +240,8 @@ def CheckBoxFrame(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -252,7 +252,7 @@ def CheckBoxFrame(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def ComboBox(label, items=[], _id=None, opts=[]):
+def ComboBox(label, items=[], ID=None, opts=[]):
     """drop-down list selection (optionally editable)
 
     Synopsis
@@ -273,8 +273,8 @@ def ComboBox(label, items=[], _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -293,7 +293,7 @@ def ComboBox(label, items=[], _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def DateField(_id=None, opts=[]):
+def DateField(ID=None, opts=[]):
     """
 
     Synopsis
@@ -307,8 +307,8 @@ def DateField(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -319,7 +319,7 @@ def DateField(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def DownloadProgress(_id=None, opts=[]):
+def DownloadProgress(ID=None, opts=[]):
     """
 
     Synopsis
@@ -333,8 +333,8 @@ def DownloadProgress(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -345,7 +345,7 @@ def DownloadProgress(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def DumbTab(tabs, contents, _id=None, opts=[]):
+def DumbTab(tabs, contents, ID=None, opts=[]):
     """Simplistic tab widget that behaves like push buttons
 
     Synopsis
@@ -360,8 +360,8 @@ def DumbTab(tabs, contents, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if len(opts) > 0:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -392,7 +392,7 @@ def Empty():
         traceback.print_exc()
         sys.exit(1)
 
-def Frame(label, child, _id=None, opts=[]):
+def Frame(label, child, ID=None, opts=[]):
     """Frame with label
 
     Synopsis
@@ -408,8 +408,8 @@ def Frame(label, child, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -422,7 +422,7 @@ def Frame(label, child, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def Graph(_id=None, opts=[]):
+def Graph(ID=None, opts=[]):
     """
 
     Synopsis
@@ -436,8 +436,8 @@ def Graph(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -582,7 +582,7 @@ def VStretch(size=None):
         traceback.print_exc()
         sys.exit(1)
 
-def HSquash(_id=None, opts=[]):
+def HSquash(ID=None, opts=[]):
     """
 
     Synopsis
@@ -596,8 +596,8 @@ def HSquash(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -633,7 +633,7 @@ def HWeight(weight, child):
         traceback.print_exc()
         sys.exit(1)
 
-def Image(_id=None, opts=[]):
+def Image(ID=None, opts=[]):
     """
 
     Synopsis
@@ -647,8 +647,8 @@ def Image(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -659,7 +659,7 @@ def Image(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def InputField(label, defaulttext=None, _id=None, opts=[]):
+def InputField(label, defaulttext=None, ID=None, opts=[]):
     """Input field
 
     Synopsis
@@ -680,8 +680,8 @@ def InputField(label, defaulttext=None, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -695,7 +695,7 @@ def InputField(label, defaulttext=None, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def TextEntry(label, defaulttext=None, _id=None, opts=[]):
+def TextEntry(label, defaulttext=None, ID=None, opts=[]):
     """Input field
 
     Synopsis
@@ -716,8 +716,8 @@ def TextEntry(label, defaulttext=None, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -731,7 +731,7 @@ def TextEntry(label, defaulttext=None, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def Password(label, defaulttext=None, _id=None, opts=[]):
+def Password(label, defaulttext=None, ID=None, opts=[]):
     """Input field
 
     Synopsis
@@ -752,8 +752,8 @@ def Password(label, defaulttext=None, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -767,7 +767,7 @@ def Password(label, defaulttext=None, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def IntField(_id=None, opts=[]):
+def IntField(ID=None, opts=[]):
     """
 
     Synopsis
@@ -781,8 +781,8 @@ def IntField(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -793,7 +793,7 @@ def IntField(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def Label(label, _id=None, opts=[]):
+def Label(label, ID=None, opts=[]):
     """Simple static text
 
     Synopsis
@@ -812,8 +812,8 @@ def Label(label, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -825,7 +825,7 @@ def Label(label, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def Heading(label, _id=None, opts=[]):
+def Heading(label, ID=None, opts=[]):
     """Simple static text
 
     Synopsis
@@ -844,8 +844,8 @@ def Heading(label, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -857,7 +857,7 @@ def Heading(label, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def Left(child, pixmap=None, _id=None, opts=[]):
+def Left(child, pixmap=None, ID=None, opts=[]):
     """Layout alignment
 
     Synopsis
@@ -875,8 +875,8 @@ def Left(child, pixmap=None, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -890,7 +890,7 @@ def Left(child, pixmap=None, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def Right(child, pixmap=None, _id=None, opts=[]):
+def Right(child, pixmap=None, ID=None, opts=[]):
     """Layout alignment
 
     Synopsis
@@ -908,8 +908,8 @@ def Right(child, pixmap=None, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -923,7 +923,7 @@ def Right(child, pixmap=None, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def Top(child, pixmap=None, _id=None, opts=[]):
+def Top(child, pixmap=None, ID=None, opts=[]):
     """Layout alignment
 
     Synopsis
@@ -941,8 +941,8 @@ def Top(child, pixmap=None, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -956,7 +956,7 @@ def Top(child, pixmap=None, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def Bottom(child, pixmap=None, _id=None, opts=[]):
+def Bottom(child, pixmap=None, ID=None, opts=[]):
     """Layout alignment
 
     Synopsis
@@ -974,8 +974,8 @@ def Bottom(child, pixmap=None, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -989,7 +989,7 @@ def Bottom(child, pixmap=None, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def HCenter(child, pixmap=None, _id=None, opts=[]):
+def HCenter(child, pixmap=None, ID=None, opts=[]):
     """Layout alignment
 
     Synopsis
@@ -1007,8 +1007,8 @@ def HCenter(child, pixmap=None, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1022,7 +1022,7 @@ def HCenter(child, pixmap=None, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def VCenter(child, pixmap=None, _id=None, opts=[]):
+def VCenter(child, pixmap=None, ID=None, opts=[]):
     """Layout alignment
 
     Synopsis
@@ -1040,8 +1040,8 @@ def VCenter(child, pixmap=None, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1055,7 +1055,7 @@ def VCenter(child, pixmap=None, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def HVCenter(child, pixmap=None, _id=None, opts=[]):
+def HVCenter(child, pixmap=None, ID=None, opts=[]):
     """Layout alignment
 
     Synopsis
@@ -1073,8 +1073,8 @@ def HVCenter(child, pixmap=None, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1088,7 +1088,7 @@ def HVCenter(child, pixmap=None, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def LogView(_id=None, opts=[]):
+def LogView(ID=None, opts=[]):
     """
 
     Synopsis
@@ -1102,8 +1102,8 @@ def LogView(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1114,7 +1114,7 @@ def LogView(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def MarginBox(_id=None, opts=[]):
+def MarginBox(ID=None, opts=[]):
     """
 
     Synopsis
@@ -1128,8 +1128,8 @@ def MarginBox(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1140,7 +1140,7 @@ def MarginBox(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def MenuButton(_id=None, opts=[]):
+def MenuButton(ID=None, opts=[]):
     """
 
     Synopsis
@@ -1154,8 +1154,8 @@ def MenuButton(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1243,7 +1243,7 @@ def MinSize(width, height, child):
         traceback.print_exc()
         sys.exit(1)
 
-def MultiLineEdit(_id=None, opts=[]):
+def MultiLineEdit(ID=None, opts=[]):
     """
 
     Synopsis
@@ -1257,8 +1257,8 @@ def MultiLineEdit(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1269,7 +1269,7 @@ def MultiLineEdit(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def MultiSelectionBox(_id=None, opts=[]):
+def MultiSelectionBox(ID=None, opts=[]):
     """
 
     Synopsis
@@ -1283,8 +1283,8 @@ def MultiSelectionBox(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1295,7 +1295,7 @@ def MultiSelectionBox(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def PackageSelector(_id=None, opts=[]):
+def PackageSelector(ID=None, opts=[]):
     """
 
     Synopsis
@@ -1309,8 +1309,8 @@ def PackageSelector(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1321,7 +1321,7 @@ def PackageSelector(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def PartitionSplitter(_id=None, opts=[]):
+def PartitionSplitter(ID=None, opts=[]):
     """
 
     Synopsis
@@ -1335,8 +1335,8 @@ def PartitionSplitter(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1347,7 +1347,7 @@ def PartitionSplitter(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def PatternSelector(_id=None, opts=[]):
+def PatternSelector(ID=None, opts=[]):
     """
 
     Synopsis
@@ -1361,8 +1361,8 @@ def PatternSelector(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1373,7 +1373,7 @@ def PatternSelector(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def ProgressBar(_id=None, opts=[]):
+def ProgressBar(ID=None, opts=[]):
     """
 
     Synopsis
@@ -1387,8 +1387,8 @@ def ProgressBar(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1399,7 +1399,7 @@ def ProgressBar(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def PushButton(label, _id=None, opts=[]):
+def PushButton(label, ID=None, opts=[]):
     """Perform action on click
 
     Synopsis
@@ -1422,8 +1422,8 @@ def PushButton(label, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1435,7 +1435,7 @@ def PushButton(label, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def RadioButton(_id=None, opts=[]):
+def RadioButton(ID=None, opts=[]):
     """
 
     Synopsis
@@ -1449,8 +1449,8 @@ def RadioButton(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1461,7 +1461,7 @@ def RadioButton(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def RadioButtonGroup(_id=None, opts=[]):
+def RadioButtonGroup(ID=None, opts=[]):
     """
 
     Synopsis
@@ -1475,8 +1475,8 @@ def RadioButtonGroup(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1487,7 +1487,7 @@ def RadioButtonGroup(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def ReplacePoint(child, _id=None, opts=[]):
+def ReplacePoint(child, ID=None, opts=[]):
     """Pseudo widget to replace parts of a dialog
 
     Synopsis
@@ -1501,8 +1501,8 @@ def ReplacePoint(child, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if len(opts) > 0:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1514,7 +1514,7 @@ def ReplacePoint(child, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def RichText(text, _id=None, opts=[]):
+def RichText(text, ID=None, opts=[]):
     """Static text with HTML-like formatting
 
     Synopsis
@@ -1534,8 +1534,8 @@ def RichText(text, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1547,7 +1547,7 @@ def RichText(text, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def SelectionBox(_id=None, opts=[]):
+def SelectionBox(ID=None, opts=[]):
     """
 
     Synopsis
@@ -1561,8 +1561,8 @@ def SelectionBox(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1573,7 +1573,7 @@ def SelectionBox(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def SimplePatchSelector(_id=None, opts=[]):
+def SimplePatchSelector(ID=None, opts=[]):
     """
 
     Synopsis
@@ -1587,8 +1587,8 @@ def SimplePatchSelector(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1599,7 +1599,7 @@ def SimplePatchSelector(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def Slider(_id=None, opts=[]):
+def Slider(ID=None, opts=[]):
     """
 
     Synopsis
@@ -1613,8 +1613,8 @@ def Slider(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1625,7 +1625,7 @@ def Slider(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def Table(header, items=[], _id=None, opts=[]):
+def Table(header, items=[], ID=None, opts=[]):
     """Multicolumn table widget
 
     Synopsis
@@ -1643,8 +1643,8 @@ def Table(header, items=[], _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1664,7 +1664,7 @@ def Table(header, items=[], _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def TimeField(_id=None, opts=[]):
+def TimeField(ID=None, opts=[]):
     """
 
     Synopsis
@@ -1678,8 +1678,8 @@ def TimeField(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1690,7 +1690,7 @@ def TimeField(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def TimezoneSelector(_id=None, opts=[]):
+def TimezoneSelector(ID=None, opts=[]):
     """
 
     Synopsis
@@ -1704,8 +1704,8 @@ def TimezoneSelector(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1716,14 +1716,14 @@ def TimezoneSelector(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def Node(label, expanded=False, children=[], _id=None):
+def Node(label, expanded=False, children=[], ID=None):
     from ycp import Term
     ycp.widget_names()
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         result.append(label)
         result.append(expanded)
         result.append(children)
@@ -1734,7 +1734,7 @@ def Node(label, expanded=False, children=[], _id=None):
         traceback.print_exc()
         sys.exit(1)
 
-def Tree(label, items, _id=None, opts=[]):
+def Tree(label, items, ID=None, opts=[]):
     """Scrollable tree selection
 
     Synopsis
@@ -1755,8 +1755,8 @@ def Tree(label, items, _id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
@@ -1769,7 +1769,7 @@ def Tree(label, items, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def VMultiProgressMeter(_id=None, opts=[]):
+def VMultiProgressMeter(ID=None, opts=[]):
     """
 
     Synopsis
@@ -1783,8 +1783,8 @@ def VMultiProgressMeter(_id=None, opts=[]):
 
     try:
         result = []
-        if _id is not None:
-            result.append(Term('id', _id))
+        if ID is not None:
+            result.append(Term('id', ID))
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
