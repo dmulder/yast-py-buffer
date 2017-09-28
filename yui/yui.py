@@ -350,6 +350,8 @@ def DumbTab(tabs, contents, _id=None, opts=[]):
         if len(opts) > 0:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
+        result.append(tabs)
+        result.append(contents)
         result = tuple(result)
 
         return DumbTab(*result)
@@ -1122,13 +1124,19 @@ def ReplacePoint(child, _id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def RichText(_id=None, opts=[]):
-    """
+def RichText(text, _id=None, opts=[]):
+    """Static text with HTML-like formatting
 
     Synopsis
-    RichText (  );
+    RichText ( string text );
 
     Parameters
+    string text
+
+    Options
+    plainText  don't interpret text as HTML
+    autoScrollDown  automatically scroll down for each text change
+    shrinkable  make the widget very small
 
     """
     from ycp import *
@@ -1141,6 +1149,7 @@ def RichText(_id=None, opts=[]):
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
+        result.append(text)
         result = tuple(result)
 
         return RichText(*result)
