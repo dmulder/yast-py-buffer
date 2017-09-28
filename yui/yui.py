@@ -58,6 +58,9 @@ class DialogTop:
     def SetFocus(self, id):
         UI.SetFocus(Term('id', id))
 
+    def HasSpecialWidget(self, symbol):
+        return UI.HasSpecialWidget(Symbol(symbol))
+
 class WizardDialog(DialogTop):
     def __init__(self, title, contents, help_txt, back_txt, next_txt):
         Wizard.SetContentsButtons(gettext.gettext(title), contents, help_txt, back_txt, next_txt)
