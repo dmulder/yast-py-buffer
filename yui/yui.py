@@ -659,13 +659,20 @@ def Image(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def InputField(_id=None, opts=[]):
-    """
+def InputField(label, defaulttext=None, _id=None, opts=[]):
+    """Input field
 
     Synopsis
-    InputField (  );
+    InputField ( string label, string defaulttext );
 
     Parameters
+    string label  the label describing the meaning of the entry
+
+    Options
+    shrinkable  make the input field very small
+
+    Optional Arguments
+    string defaulttext  The text contained in the text entry
 
     """
     from ycp import InputField, Term, Symbol
@@ -678,9 +685,84 @@ def InputField(_id=None, opts=[]):
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
+        result.append(label)
+        if defaulttext is not None:
+            result.append(defaulttext)
         result = tuple(result)
 
         return InputField(*result)
+    except Exception as e:
+        traceback.print_exc()
+        sys.exit(1)
+
+def TextEntry(label, defaulttext=None, _id=None, opts=[]):
+    """Input field
+
+    Synopsis
+    TextEntry ( string label, string defaulttext );
+
+    Parameters
+    string label  the label describing the meaning of the entry
+
+    Options
+    shrinkable  make the input field very small
+
+    Optional Arguments
+    string defaulttext  The text contained in the text entry
+
+    """
+    from ycp import TextEntry, Term, Symbol
+    ycp.widget_names()
+
+    try:
+        result = []
+        if _id is not None:
+            result.append(Term('id', _id))
+        if opts is not None:
+            for opt in opts:
+                result.append(Term('opt', Symbol(opt)))
+        result.append(label)
+        if defaulttext is not None:
+            result.append(defaulttext)
+        result = tuple(result)
+
+        return TextEntry(*result)
+    except Exception as e:
+        traceback.print_exc()
+        sys.exit(1)
+
+def Password(label, defaulttext=None, _id=None, opts=[]):
+    """Input field
+
+    Synopsis
+    Password ( string label, string defaulttext );
+
+    Parameters
+    string label  the label describing the meaning of the entry
+
+    Options
+    shrinkable  make the input field very small
+
+    Optional Arguments
+    string defaulttext  The text contained in the text entry
+
+    """
+    from ycp import Password, Term, Symbol
+    ycp.widget_names()
+
+    try:
+        result = []
+        if _id is not None:
+            result.append(Term('id', _id))
+        if opts is not None:
+            for opt in opts:
+                result.append(Term('opt', Symbol(opt)))
+        result.append(label)
+        if defaulttext is not None:
+            result.append(defaulttext)
+        result = tuple(result)
+
+        return Password(*result)
     except Exception as e:
         traceback.print_exc()
         sys.exit(1)
