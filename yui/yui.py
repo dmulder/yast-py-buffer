@@ -377,13 +377,15 @@ def Empty():
         traceback.print_exc()
         sys.exit(1)
 
-def Frame(_id=None, opts=[]):
-    """
+def Frame(label, child, _id=None, opts=[]):
+    """Frame with label
 
     Synopsis
-    Frame (  );
+    Frame ( string label, term child );
 
     Parameters
+    string label  title to be displayed on the top left edge
+    term child  the contained child widget
 
     """
     from ycp import *
@@ -396,6 +398,8 @@ def Frame(_id=None, opts=[]):
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
+        result.append(label)
+        result.append(child)
         result = tuple(result)
 
         return Frame(*result)
@@ -672,13 +676,17 @@ def Label(_id=None, opts=[]):
         traceback.print_exc()
         sys.exit(1)
 
-def Left(_id=None, opts=[]):
-    """
+def Left(child, pixmap=None, _id=None, opts=[]):
+    """Layout alignment
 
     Synopsis
-    Left (  );
+    Left ( term child, string pixmap );
 
     Parameters
+    term child  The contained child widget
+
+    Optional Arguments
+    background pixmap
 
     """
     from ycp import *
@@ -691,9 +699,210 @@ def Left(_id=None, opts=[]):
         if opts is not None:
             for opt in opts:
                 result.append(Term('opt', Symbol(opt)))
+        result.append(child)
+        if pixmap is not None:
+            result.append(Term('BackgroundPixmap', pixmap))
         result = tuple(result)
 
         return Left(*result)
+    except Exception as e:
+        traceback.print_exc()
+        sys.exit(1)
+
+def Right(child, pixmap=None, _id=None, opts=[]):
+    """Layout alignment
+
+    Synopsis
+    Right ( term child, string pixmap );
+
+    Parameters
+    term child  The contained child widget
+
+    Optional Arguments
+    background pixmap
+
+    """
+    from ycp import *
+    ycp.widget_names()
+
+    try:
+        result = []
+        if _id is not None:
+            result.append(Term('id', _id))
+        if opts is not None:
+            for opt in opts:
+                result.append(Term('opt', Symbol(opt)))
+        result.append(child)
+        if pixmap is not None:
+            result.append(Term('BackgroundPixmap', pixmap))
+        result = tuple(result)
+
+        return Right(*result)
+    except Exception as e:
+        traceback.print_exc()
+        sys.exit(1)
+
+def Top(child, pixmap=None, _id=None, opts=[]):
+    """Layout alignment
+
+    Synopsis
+    Top ( term child, string pixmap );
+
+    Parameters
+    term child  The contained child widget
+
+    Optional Arguments
+    background pixmap
+
+    """
+    from ycp import *
+    ycp.widget_names()
+
+    try:
+        result = []
+        if _id is not None:
+            result.append(Term('id', _id))
+        if opts is not None:
+            for opt in opts:
+                result.append(Term('opt', Symbol(opt)))
+        result.append(child)
+        if pixmap is not None:
+            result.append(Term('BackgroundPixmap', pixmap))
+        result = tuple(result)
+
+        return Top(*result)
+    except Exception as e:
+        traceback.print_exc()
+        sys.exit(1)
+
+def Bottom(child, pixmap=None, _id=None, opts=[]):
+    """Layout alignment
+
+    Synopsis
+    Bottom ( term child, string pixmap );
+
+    Parameters
+    term child  The contained child widget
+
+    Optional Arguments
+    background pixmap
+
+    """
+    from ycp import *
+    ycp.widget_names()
+
+    try:
+        result = []
+        if _id is not None:
+            result.append(Term('id', _id))
+        if opts is not None:
+            for opt in opts:
+                result.append(Term('opt', Symbol(opt)))
+        result.append(child)
+        if pixmap is not None:
+            result.append(Term('BackgroundPixmap', pixmap))
+        result = tuple(result)
+
+        return Bottom(*result)
+    except Exception as e:
+        traceback.print_exc()
+        sys.exit(1)
+
+def HCenter(child, pixmap=None, _id=None, opts=[]):
+    """Layout alignment
+
+    Synopsis
+    HCenter ( term child, string pixmap );
+
+    Parameters
+    term child  The contained child widget
+
+    Optional Arguments
+    background pixmap
+
+    """
+    from ycp import *
+    ycp.widget_names()
+
+    try:
+        result = []
+        if _id is not None:
+            result.append(Term('id', _id))
+        if opts is not None:
+            for opt in opts:
+                result.append(Term('opt', Symbol(opt)))
+        result.append(child)
+        if pixmap is not None:
+            result.append(Term('BackgroundPixmap', pixmap))
+        result = tuple(result)
+
+        return HCenter(*result)
+    except Exception as e:
+        traceback.print_exc()
+        sys.exit(1)
+
+def VCenter(child, pixmap=None, _id=None, opts=[]):
+    """Layout alignment
+
+    Synopsis
+    VCenter ( term child, string pixmap );
+
+    Parameters
+    term child  The contained child widget
+
+    Optional Arguments
+    background pixmap
+
+    """
+    from ycp import *
+    ycp.widget_names()
+
+    try:
+        result = []
+        if _id is not None:
+            result.append(Term('id', _id))
+        if opts is not None:
+            for opt in opts:
+                result.append(Term('opt', Symbol(opt)))
+        result.append(child)
+        if pixmap is not None:
+            result.append(Term('BackgroundPixmap', pixmap))
+        result = tuple(result)
+
+        return VCenter(*result)
+    except Exception as e:
+        traceback.print_exc()
+        sys.exit(1)
+
+def HVCenter(child, pixmap=None, _id=None, opts=[]):
+    """Layout alignment
+
+    Synopsis
+    HVCenter ( term child, string pixmap );
+
+    Parameters
+    term child  The contained child widget
+
+    Optional Arguments
+    background pixmap
+
+    """
+    from ycp import *
+    ycp.widget_names()
+
+    try:
+        result = []
+        if _id is not None:
+            result.append(Term('id', _id))
+        if opts is not None:
+            for opt in opts:
+                result.append(Term('opt', Symbol(opt)))
+        result.append(child)
+        if pixmap is not None:
+            result.append(Term('BackgroundPixmap', pixmap))
+        result = tuple(result)
+
+        return HVCenter(*result)
     except Exception as e:
         traceback.print_exc()
         sys.exit(1)
