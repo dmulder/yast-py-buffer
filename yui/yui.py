@@ -12,8 +12,12 @@ class UISequencer:
 
     @staticmethod
     def runner():
-        UISequencer.funcs[UISequencer.itr](*(UISequencer.cli_args))
+        ret = UISequencer.funcs[UISequencer.itr](*(UISequencer.cli_args))
         UISequencer.itr += 1
+        if type(ret) is tuple:
+            data, ret = ret
+            UISequencer.cli_args = (data,) + UISequencer.cli_args
+        return ret
 
     def run(self, funcs):
         UISequencer.funcs = funcs
