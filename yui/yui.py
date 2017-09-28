@@ -120,7 +120,7 @@ def BarGraph(values, labels, _id=None, opts=[]):
     Optional Arguments
     list labels
     """
-    from ycp import *
+    from ycp import BarGraph, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -152,7 +152,7 @@ def BusyIndicator(label, timeout=None, _id=None, opts=[]):
     integer timeout  the timeout in milliseconds until busy indicator changes to stalled state, 1000ms by default
 
     """
-    from ycp import *
+    from ycp import BusyIndicator, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -182,7 +182,7 @@ def ButtonBox(buttons, _id=None, opts=[]):
     term buttons  list of PushButton items
 
     """
-    from ycp import *
+    from ycp import ButtonBox, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -209,7 +209,7 @@ def CheckBox(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import CheckBox, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -235,7 +235,7 @@ def CheckBoxFrame(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import CheckBoxFrame, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -261,7 +261,7 @@ def ComboBox(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import ComboBox, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -287,7 +287,7 @@ def DateField(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import DateField, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -313,7 +313,7 @@ def DownloadProgress(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import DownloadProgress, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -340,7 +340,7 @@ def DumbTab(tabs, contents, _id=None, opts=[]):
     list tabs  page headers
     term contents  page contents - usually a ReplacePoint
     """
-    from ycp import *
+    from ycp import DumbTab, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -368,7 +368,7 @@ def Empty():
     Parameters
 
     """
-    from ycp import *
+    from ycp import Term
     ycp.widget_names()
 
     try:
@@ -388,7 +388,7 @@ def Frame(label, child, _id=None, opts=[]):
     term child  the contained child widget
 
     """
-    from ycp import *
+    from ycp import Frame, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -416,7 +416,7 @@ def Graph(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import Graph, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -446,7 +446,7 @@ def HBox(children=[], _id=None, opts=[]):
     list children  children widgets
 
     """
-    from ycp import *
+    from ycp import HBox, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -477,7 +477,7 @@ def VBox(children=[], _id=None, opts=[]):
     list children  children widgets
 
     """
-    from ycp import *
+    from ycp import VBox, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -504,7 +504,7 @@ def HSpacing(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import HSpacing, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -530,7 +530,7 @@ def HSquash(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import HSquash, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -558,7 +558,7 @@ def HWeight(weight, child):
     term child  the child widget
 
     """
-    from ycp import *
+    from ycp import HWeight
     ycp.widget_names()
 
     try:
@@ -581,7 +581,7 @@ def Image(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import Image, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -607,7 +607,7 @@ def InputField(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import InputField, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -633,7 +633,7 @@ def IntField(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import IntField, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -659,7 +659,7 @@ def Label(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import Label, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -689,7 +689,7 @@ def Left(child, pixmap=None, _id=None, opts=[]):
     background pixmap
 
     """
-    from ycp import *
+    from ycp import Left, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -722,7 +722,7 @@ def Right(child, pixmap=None, _id=None, opts=[]):
     background pixmap
 
     """
-    from ycp import *
+    from ycp import Right, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -755,7 +755,7 @@ def Top(child, pixmap=None, _id=None, opts=[]):
     background pixmap
 
     """
-    from ycp import *
+    from ycp import Top, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -788,7 +788,7 @@ def Bottom(child, pixmap=None, _id=None, opts=[]):
     background pixmap
 
     """
-    from ycp import *
+    from ycp import Bottom, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -821,7 +821,7 @@ def HCenter(child, pixmap=None, _id=None, opts=[]):
     background pixmap
 
     """
-    from ycp import *
+    from ycp import HCenter, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -854,7 +854,7 @@ def VCenter(child, pixmap=None, _id=None, opts=[]):
     background pixmap
 
     """
-    from ycp import *
+    from ycp import VCenter, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -887,7 +887,7 @@ def HVCenter(child, pixmap=None, _id=None, opts=[]):
     background pixmap
 
     """
-    from ycp import *
+    from ycp import HVCenter, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -916,7 +916,7 @@ def LogView(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import LogView, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -942,7 +942,7 @@ def MarginBox(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import MarginBox, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -968,7 +968,7 @@ def MenuButton(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import MenuButton, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -996,7 +996,7 @@ def MinWidth(size, child):
     term child  The contained child widget
 
     """
-    from ycp import *
+    from ycp import MinWidth
     ycp.widget_names()
 
     try:
@@ -1021,7 +1021,7 @@ def MinHeight(size, child):
     term child  The contained child widget
 
     """
-    from ycp import *
+    from ycp import MinHeight
     ycp.widget_names()
 
     try:
@@ -1047,7 +1047,7 @@ def MinSize(width, height, child):
     term child  The contained child widget
 
     """
-    from ycp import *
+    from ycp import MinSize
     ycp.widget_names()
 
     try:
@@ -1071,7 +1071,7 @@ def MultiLineEdit(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import MultiLineEdit, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -1097,7 +1097,7 @@ def MultiSelectionBox(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import MultiSelectionBox, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -1123,7 +1123,7 @@ def PackageSelector(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import PackageSelector, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -1149,7 +1149,7 @@ def PartitionSplitter(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import PartitionSplitter, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -1175,7 +1175,7 @@ def PatternSelector(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import PatternSelector, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -1201,7 +1201,7 @@ def ProgressBar(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import ProgressBar, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -1236,7 +1236,7 @@ def PushButton(label, _id=None, opts=[]):
     customButton  override any other button role assigned to this button
 
     """
-    from ycp import *
+    from ycp import PushButton, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -1263,7 +1263,7 @@ def RadioButton(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import RadioButton, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -1289,7 +1289,7 @@ def RadioButtonGroup(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import RadioButtonGroup, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -1315,7 +1315,7 @@ def ReplacePoint(child, _id=None, opts=[]):
     Parameters
     term child  the child widget
     """
-    from ycp import *
+    from ycp import ReplacePoint, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -1348,7 +1348,7 @@ def RichText(text, _id=None, opts=[]):
     shrinkable  make the widget very small
 
     """
-    from ycp import *
+    from ycp import RichText, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -1375,7 +1375,7 @@ def SelectionBox(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import SelectionBox, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -1401,7 +1401,7 @@ def SimplePatchSelector(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import SimplePatchSelector, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -1427,7 +1427,7 @@ def Slider(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import Slider, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -1457,7 +1457,7 @@ def Table(header, items=[], _id=None, opts=[]):
     list items  the items contained in the selection box
 
     """
-    from ycp import *
+    from ycp import Table, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -1489,7 +1489,7 @@ def TimeField(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import TimeField, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -1515,7 +1515,7 @@ def TimezoneSelector(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import TimezoneSelector, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -1533,7 +1533,7 @@ def TimezoneSelector(_id=None, opts=[]):
         sys.exit(1)
 
 def Node(label, expanded=False, children=[]):
-    from ycp import *
+    from ycp import Term
     ycp.widget_names()
 
     try:
@@ -1564,7 +1564,7 @@ def Tree(label, items, _id=None, opts=[]):
     itemList items  the items contained in the tree
 
     """
-    from ycp import *
+    from ycp import Tree, Term, Symbol
     ycp.widget_names()
 
     try:
@@ -1592,7 +1592,7 @@ def VMultiProgressMeter(_id=None, opts=[]):
     Parameters
 
     """
-    from ycp import *
+    from ycp import VMultiProgressMeter, Term, Symbol
     ycp.widget_names()
 
     try:
