@@ -49,49 +49,63 @@ import sys
 import traceback
 
 class DialogTop:
-    def UserInput(self):
+    @staticmethod
+    def UserInput():
         while True:
             yield UI.UserInput()
 
-    def QueryWidget(self, _id, symbol):
+    @staticmethod
+    def QueryWidget(_id, symbol):
         return UI.QueryWidget(Term('id', _id), Symbol(symbol))
 
-    def ReplaceWidget(self, _id, contents):
+    @staticmethod
+    def ReplaceWidget(_id, contents):
         UI.ReplaceWidget(Term('id', _id), contents)
 
-    def SetFocus(self, _id):
+    @staticmethod
+    def SetFocus(_id):
         UI.SetFocus(Term('id', _id))
 
-    def HasSpecialWidget(self, symbol):
+    @staticmethod
+    def HasSpecialWidget(symbol):
         return UI.HasSpecialWidget(Symbol(symbol))
 
 class WizardDialog(DialogTop):
-    def __init__(self, title, contents, help_txt, back_txt, next_txt):
+    @staticmethod
+    def SetContentsButtons(title, contents, help_txt, back_txt, next_txt):
         Wizard.SetContentsButtons(gettext.gettext(title), contents, help_txt, back_txt, next_txt)
 
-    def DisableBackButton(self):
+    @staticmethod
+    def DisableBackButton():
         Wizard.DisableBackButton()
 
-    def DisableNextButton(self):
+    @staticmethod
+    def DisableNextButton():
         Wizard.DisableNextButton()
 
-    def DisableAbortButton(self):
+    @staticmethod
+    def DisableAbortButton():
         Wizard.DisableAbortButton()
 
-    def EnableAbortButton(self):
+    @staticmethod
+    def EnableAbortButton():
         Wizard.EnableAbortButton()
 
-    def EnableNextButton(self):
+    @staticmethod
+    def EnableNextButton():
         Wizard.EnableNextButton()
 
-    def EnableBackButton(self):
+    @staticmethod
+    def EnableBackButton():
         Wizard.EnableBackButton()
 
 class Dialog(DialogTop):
-    def __init__(self, contents):
+    @staticmethod
+    def OpenDialog(contents):
         UI.OpenDialog(contents)
 
-    def CloseDialog(self):
+    @staticmethod
+    def CloseDialog():
         UI.CloseDialog()
 
 def BarGraph(values, labels, _id=None, opts=[]):
